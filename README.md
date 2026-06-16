@@ -2,8 +2,8 @@
 
 Este repositorio contiene tres implementaciones principales para el analisis de MIP/IIT:
 
-1. `QNodes` (base clasica, antes referida como Proyecto-2025A)
-2. `GeoMIP/src/Method2_Dynamic_Programming_Reformulation`
+1. `KQNodes` (base clasica, antes referida como Proyecto-2025A)
+2. `KGeoMIP/src/Method2_Dynamic_Programming_Reformulation`
 
 ## Requisitos
 
@@ -19,20 +19,20 @@ pip install uv
 
 ## Estructura Rapida
 
-- `QNodes/`: ejecucion directa de un caso de prueba (`exec.py`).
-- `GeoMIP/src/Method1_GPU_Accelerated/`: procesamiento por lotes desde Excel.
-- `GeoMIP/src/Method2_Dynamic_Programming_Reformulation/`: procesamiento por lotes desde Excel.
-- `GeoMIP/data/samples/`: datasets TPM `N*.csv` usados por Method1/Method2.
-- `GeoMIP/results/`: archivos Excel de entrada/salida para Method1/Method2.
+- `KQNodes/`: ejecucion directa de un caso de prueba (`exec.py`).
+- `KGeoMIP/src/Method1_GPU_Accelerated/`: procesamiento por lotes desde Excel.
+- `KGeoMIP/src/Method2_Dynamic_Programming_Reformulation/`: procesamiento por lotes desde Excel.
+- `KGeoMIP/data/samples/`: datasets TPM `N*.csv` usados por Method1/Method2.
+- `KGeoMIP/results/`: archivos Excel de entrada/salida para Method1/Method2.
 
-## 1) Ejecutar QNodes
+## 1) Ejecutar KQNodes
 
 ### Dependencias
 
-Desde `QNodes/`:
+Desde `KQNodes/`:
 
 ```bash
-cd QNodes
+cd KQNodes
 uv sync
 ```
 
@@ -44,13 +44,13 @@ uv run exec.py
 
 ### Que hace
 
-- Carga una red desde `QNodes/src/.samples/` (segun el estado inicial y pagina configurada).
-- Ejecuta estrategia `BruteForce` desde `QNodes/src/main.py`.
+- Carga una red desde `KQNodes/src/.samples/` (segun el estado inicial y pagina configurada).
+- Ejecuta estrategia `BruteForce` desde `KQNodes/src/main.py`.
 - Imprime la solucion en consola.
 
 ### Ajustes comunes
 
-Edita `QNodes/src/main.py`:
+Edita `KQNodes/src/main.py`:
 
 - `estado_inicial`
 - `condiciones`
@@ -63,10 +63,10 @@ Si termina muy rapido, no necesariamente es error: puede ser un caso pequeno o c
 
 ### Dependencias
 
-Desde `GeoMIP/src/Method2_Dynamic_Programming_Reformulation/`:
+Desde `KGeoMIP/src/Method2_Dynamic_Programming_Reformulation/`:
 
 ```bash
-cd GeoMIP/src/Method2_Dynamic_Programming_Reformulation
+cd KGeoMIP/src/Method2_Dynamic_Programming_Reformulation
 uv sync
 ```
 
@@ -78,10 +78,10 @@ uv run exec.py
 
 ### Entrada por defecto
 
-- Excel entrada: `GeoMIP/results/Pruebas_Metodo2.xlsx`
+- Excel entrada: `KGeoMIP/results/Pruebas_Metodo2.xlsx`
 - Hoja usada actualmente: indice `8`
 - Columna subsistema: `B`
 
 ### Salida por defecto
 
-- Excel salida: `GeoMIP/results/resultados_Geometric.xlsx`
+- Excel salida: `KGeoMIP/results/resultados_Geometric.xlsx`
